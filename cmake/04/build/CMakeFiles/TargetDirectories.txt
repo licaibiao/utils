@@ -1,0 +1,4 @@
+/home/biao/test/cmake/04/build/CMakeFiles/edit_cache.dir
+/home/biao/test/cmake/04/build/CMakeFiles/rebuild_cache.dir
+/home/biao/test/cmake/04/build/CMakeFiles/hello.dir
+/home/biao/test/cmake/04/build/CMakeFiles/libhello.dir
