@@ -10,5 +10,6 @@ cmake .. -DCROSS_COMPILE=\
 	-DEMMC_SUPPORT=ON
 
 
+make
 
 

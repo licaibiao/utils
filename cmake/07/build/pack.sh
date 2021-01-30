@@ -1,10 +1,5 @@
 #!/bin/bash
 
-ROOT_DIR=`pwd`                                                                                                                                    
-BIN_DIR=${ROOT_DIR}/pack/bin
-if [ ! -d ${BIN_DIR} ]; then
-	mkdir ${BIN_DIR}
-fi
 
 
 
@@ -21,15 +16,31 @@ else
 	echo "you chose cancel."
 fi
 
-if [ $OPTION == "main" ]; then
-	echo "main"
-else
-	echo "sub"	
-fi	
 
+echo Please input your version
+ 	read VERSION
 
-if [ $exitstatus = 0 ]; then
-	echo "end"
+ROOT_DIR=`pwd`                                                                                                                                    
+BIN_DIR=${ROOT_DIR}/install/${OPTION}_${VERSION}/bin
+if [ ! -d ${BIN_DIR} ]; then
+	mkdir -p ${BIN_DIR}
 fi
+
+LIB_DIR=${ROOT_DIR}/install/${OPTION}_${VERSION}/lib
+if [ ! -d ${LIB_DIR} ]; then
+	mkdir -p ${LIB_DIR}
+fi
+
+	cp lib/* $LIB_DIR -rf
+	cp bin/* $BIN_DIR -rf
+
+
+#if [ $OPTION == "main" ]; then
+#	echo "chose main"
+#else
+#	echo "chsoe sub"	
+#fi	
+
+
 
 
