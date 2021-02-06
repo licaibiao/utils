@@ -64,7 +64,6 @@ int set_heartbeat_log(void)
 {
 	system("echo \"heartbeat no recv \" >> /config/heartbeat.log");
 	system("date >> /config/heartbeat.log");
-	
 	sync();
 }
 
@@ -101,7 +100,6 @@ int read_pipe_date(void)
 		printf("read data error \n");
 		return -1;
 	}
-	
 }
 
 int exit_pipe(void)

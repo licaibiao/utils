@@ -1,0 +1,207 @@
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14-Archon (biao@ubuntu) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #2 PREEMPT Thu Dec 31 11:56:44 CST 2020
+[    0.000000] CPU0 RESET ERROR PC:8001F224
+[    0.000000] [<8001f224>] jz_wait_irqoff+0x68/0x9c
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] cgu_get_rate, parent = 1392000000, rate = 0, m = 0, n = 0, reg val = 0x081000ff
+[    0.000000] cgu_get_rate, parent = 1392000000, rate = 0, m = 0, n = 0, reg val = 0x081000ff
+[    0.000000] CCLK:1392MHz L2CLK:696Mhz H0CLK:200MHz H2CLK:200Mhz PCLK:100Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 00473000 @ 00010000 (usable)
+[    0.000000]  memory: 0003d000 @ 00483000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 05000000 @ 00000000 (usable)
+[    0.000000] Initial ramdisk at: 0x80600000 (7074816 bytes)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x04ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x04ffffff]
+[    0.000000] On node 0 totalpages: 20480
+[    0.000000] free_area_init_node: node 0, pgdat 804821d0, node_mem_map 81000000
+[    0.000000]   Normal zone: 160 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 20480 pages, LIFO batch:3
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 20320
+[    0.000000] Kernel command line: console=ttyS0,115200n8 mem=80M@0x0 rmem=48M@0x5000000 root=/dev/ram0 rw rdinit=/linuxrc mtdparts=jz_sfc:256K(boot),352K(tag),5M(kernel),6048K(rootfs),2560K(recovery),1536K(system),512K(config),16M@0(all) lpj=6955008 quiet senv;[HW];init_vw=1280;init_vh=720;nrvbs=2;mode=0;[IR];ir_mode=auto;eenv; lzo_size=3191326 rd_start=0x80600000 rd_size=0x6bf400
+[    0.000000] ir_switch_parse mode: 2 threshold min:2000 max:2500
+[    0.000000] ir_switch_parse width:1280 height:720 nrvbs:2
+[    0.000000] ir_switch_parse hight framerate mode change num:5
+[    0.000000] ir_switch_parse dayEv:0 nightEv:0 coeff:0 wbr:0 wbb:0
+[    0.000000] Sensor Calibration Mode:0
+[    0.000000] PID hash table entries: 512 (order: -1, 2048 bytes)
+[    0.000000] Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Memory: 67696k/81920k available (3525k kernel code, 14224k reserved, 1029k data, 244k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:358
+[    0.000000] clockevents_config_and_register success.
+[    0.000014] Calibrating delay loop (skipped) preset value.. 1391.00 BogoMIPS (lpj=6955008)
+[    0.000026] pid_max: default: 32768 minimum: 301
+[    0.000194] Mount-cache hash table entries: 512
+[    0.000651] Initializing cgroup subsys debug
+[    0.000674] Initializing cgroup subsys freezer
+[    0.002373] NET: Registered protocol family 16
+[    0.002723] register process exit failed.
+[    0.010072] bio: create slab <bio-0> at 0
+[    0.011502] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.011724] usbcore: registered new interface driver usbfs
+[    0.011767] usbcore: registered new interface driver hub
+[    0.011909] usbcore: registered new device driver usb
+[    0.012062] i2c-gpio i2c-gpio.1: using pins 57 (SDA) and 58 (SCL)
+[    0.012178] media: Linux media interface: v0.10
+[    0.012209] Linux video capture interface: v2.00
+[    0.012230] TTFF tx_isp_riscv_hf_prepare:236 tx_isp_stop_riscv start:204
+[    0.012238] AE Para ADDR = a3700000 HEAD:55aaaa55 SENSOR:20630828
+[    0.245272] TTFF tx_isp_riscv_hf_prepare:258 wait 8 frame done:437
+[    0.246282] TTFF tx_isp_riscv_hf_prepare:271 tx_isp_stop_riscv done:438
+[    0.246290] Current sensor again:1024 isp gain:1024 inttime:1 luma:0 ev:1
+[    0.246296] Current awb rgain:265 bgain:272
+[    0.246301] Riscv frame count:6
+[    0.246306] Tuning mode is:0
+[    0.246966] @@@@ tx-isp-probe ok(version H20201217a), compiler date=Dec 30 2020 @@@@@
+[    0.247432] probe ok ------->gc2063 build:Dec 31 2020 11:49:33
+[    0.247454] gc2063 chip found @ 0x37 (i2c0)
+[    0.247750] Calibration ADDR = a3830000
+[    0.252828] Calibration len = 159736
+[    0.252894] Calibration len = 159736
+[    0.252906] Load Sensor Setting DATE:calibration mode 0 MD5:calibration crc 1023553130
+[    0.252912] Calibration len = 159736
+[    0.255758] NCU: size = 4685424  paddr = 0x5000000
+[    0.255795] gc2063 stream on
+[    0.255808] Loop Count:30 Discard Frame:fffffffc
+[    0.255822] TTFF frame_channel_fast_start 108 W:1280 H:720 N:2
+[    0.256471] Switching to clocksource jz_clocksource
+[    0.256912] NET: Registered protocol family 2
+[    0.257399] TCP established hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.257434] TCP bind hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.257452] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.257504] TCP: reno registered
+[    0.257516] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.257535] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.257748] NET: Registered protocol family 1
+[    0.257988] Trying to unpack rootfs image as initramfs...
+[    0.288203] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:480
+[    0.314548] Freeing initrd memory: 6908K (80600000 - 80cbf000)
+[    0.314800] freq_udelay_jiffys[0].max_num = 10
+[    0.314806] cpufreq  udelay  loops_per_jiffy
+[    0.314811] 12000     59956   59956
+[    0.314816] 24000     119913  119913
+[    0.314821] 60000     299784  299784
+[    0.314826] 120000    599569  599569
+[    0.314830] 200000    999282  999282
+[    0.314836] 300000    1498924         1498924
+[    0.314840] 600000    2997848         2997848
+[    0.314846] 792000    3957159         3957159
+[    0.314850] 1008000   5036385         5036385
+[    0.314856] 1200000   5995696         5995696
+[    0.318612] msgmni has been set to 145
+[    0.319636] io scheduler noop registered
+[    0.319679] io scheduler cfq registered (default)
+[    0.320199] jz-uart.0: ttyS0 at MMIO 0x10030000 (irq = 59) is a uart0
+[    0.325531] console [ttyS0] enabled
+[    0.325688] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.326469] brd: module loaded
+[    0.326928] loop: module loaded
+[    0.327305] zram: Created 2 device(s) ...
+[    0.327370] logger: created 256K log 'log_main'
+[    0.327783] jz SADC driver registeres over!
+[    0.328196] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:520
+[    0.328574] jz TCU driver register completed
+[    0.328825] tun: Universal TUN/TAP device driver, 1.6
+[    0.328836] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.329080] usbcore: registered new interface driver asix
+[    0.329116] usbcore: registered new interface driver cdc_ether
+[    0.329206] dwc2 otg probe start
+[    0.329234] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.329256] DWC IN OTG MODE
+[    0.329916] dwc2 dwc2: Keep PHY ON
+[    0.329924] dwc2 dwc2: Using Buffer DMA mode
+[    0.329933] dwc2 dwc2: Core Release: 3.00a
+[    0.329976] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.329998] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.330752] hub 1-0:1.0: USB hub found
+[    0.330776] hub 1-0:1.0: 1 port detected
+[    0.330891] dwc2 dwc2: DWC2 Host Initialized
+[    0.330956] dwc2 otg probe success
+[    0.331133] usbcore: registered new interface driver usbserial
+[    0.331164] usbcore: registered new interface driver option
+[    0.331189] usbserial: USB Serial support registered for GSM modem (1-port)
+[    0.331298] i2c /dev entries driver
+[    0.331828] TCP: cubic registered
+[    0.331848] NET: Registered protocol family 17
+[    0.334276] Freeing unused kernel memory: 244K (80483000 - 804c0000)
+[    0.394863] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:586
+[    0.404260] jz_sfc Build : Oct 30 2020 21:19:55
+[    0.404444] the id code = ef4018, the flash name is WIN25Q128
+[    0.404451] the flash->board_info->quad_mode = 6b
+[    0.404460] JZ SFC Controller for SFC channel 0 driver register
+[    0.404487] 8 cmdlinepart partitions found on MTD device jz_sfc
+[    0.404493] Creating 8 MTD partitions on "jz_sfc":
+[    0.404510] 0x000000000000-0x000000040000 : "boot"
+[    0.415111] 0x000000040000-0x000000098000 : "tag"
+[    0.425704] 0x000000098000-0x000000598000 : "kernel"
+[    0.429972] dwc2 dwc2: ID PIN CHANGED!
+[    0.430534] TTFF frame_channel_buffer_done:294 Chn:0 Buf:0 Write Done:622
+[    0.438586] 0x000000598000-0x000000b80000 : "rootfs"
+[    0.447176] 0x000000b80000-0x000000e00000 : "recovery"
+[    0.455463] 0x000000e00000-0x000000f80000 : "system"
+[    0.461532] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:653
+[    0.464570] 0x000000f80000-0x000001000000 : "config"
+[    0.475306] 0x000000000000-0x000001000000 : "all"
+[    0.485964] SPI NOR MTD LOAD OK
+[    0.495133] TTFF frame_channel_buffer_done:294 Chn:0 Buf:1 Write Done:687
+[    0.499574] jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+[    0.510530] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.528201] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:720
+[    0.542686] zram0: detected capacity change from 0 to 16777216
+[    0.558534] Adding 16380k swap on /dev/zram0.  Priority:-1 extents:1 across:16380k SS
+[    0.594865] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:786
+[    0.661528] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:853
+[    0.728195] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:920
+[    0.794865] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:986
+[    0.828476] TTFF frame_channel_buffer_done:294 Chn:0 Buf:0 Write Done:1020
+[    0.828498] TTFF frame_channel_buffer_done:294 Chn:1 Buf:0 Write Done:1020
+[    0.861531] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1053
+[    0.886610] usb 1-1: new high-speed USB device number 2 using dwc2
+[    0.895080] TTFF frame_channel_buffer_done:294 Chn:0 Buf:1 Write Done:1087
+[    0.895101] TTFF frame_channel_buffer_done:294 Chn:1 Buf:1 Write Done:1087
+[    0.928197] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1120
+[    0.961749] TTFF frame_channel_buffer_done:294 Chn:0 Buf:0 Write Done:1153
+[    0.961771] TTFF frame_channel_buffer_done:294 Chn:1 Buf:0 Write Done:1153
+[    0.994861] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1186
+[    1.028414] TTFF frame_channel_buffer_done:294 Chn:0 Buf:1 Write Done:1220
+[    1.028435] TTFF frame_channel_buffer_done:294 Chn:1 Buf:1 Write Done:1220
+[    1.061528] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1253
+[    1.095131] TTFF frame_channel_buffer_done:294 Chn:0 Buf:0 Write Done:1287
+[    1.111109] cdc_ether 1-1:2.0 usb0: register 'cdc_ether' at usb-dwc2-1, CDC Ethernet Device, 02:1e:10:1f:00:00
+[    1.116325] option 1-1:2.2: GSM modem (1-port) converter detected
+[    1.122135] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB0
+[    1.124898] option 1-1:2.3: GSM modem (1-port) converter detected
+[    1.128191] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1320
+[    1.131162] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB1
+[    1.135537] option 1-1:2.4: GSM modem (1-port) converter detected
+[    1.143527] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB2
+[    1.147701] option 1-1:2.5: GSM modem (1-port) converter detected
+[    1.155228] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB3
+[    1.159576] option 1-1:2.6: GSM modem (1-port) converter detected
+[    1.173109] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB4
+[    1.194859] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1386
+[    1.261528] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1453
+[    1.328195] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1520
+[    1.394862] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1586
+[    1.461528] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1653
+[    1.528195] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1720
+[    1.594862] TTFF isp_vic_interrupt_service_routine:885 Chn:0  Frame  Start:1786
+[    1.961775] Discard Frame Recovery
+[    5.206513] gc2063 stream off
+[    5.357177] watchdog watchdog0: watchdog did not stop!
