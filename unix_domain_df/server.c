@@ -14,9 +14,9 @@
 #include <signal.h>
 #include <pthread.h>
 
-#define SERVER_PATH    "/tmp/daemon"    
-#define HEARBEAT_PAHT  "/tmp/hearbeat"  
-#define SYSTEM_PAHT    "/tmp/system_cmd" 
+#define SERVER_PATH    "./tmp/server"     
+#define HEARBEAT_PAHT  "./tmp/hearbeat"  
+#define SYSTEM_PAHT    "./tmp/system_cmd"  
 
 #define PROCESS_NAME    "client"
 
@@ -109,6 +109,9 @@ int set_heartbeat_log(void)
 #endif
     
 }
+
+
+
 
 int server_read_data(int *s32SocketId,unsigned char *pu8DataAddr,int s32MaxLen,int *ps32Datalen)
 {
@@ -222,8 +225,6 @@ int server_hearbeat_handle(int SocketId)
     } 
 }
 
-
-//system 命令不常用，不需要建立长链接
 int server_system_handle(int SocketId)
 {
     int l_s32Len = 0;
@@ -234,7 +235,7 @@ int server_system_handle(int SocketId)
 
     if((l_s32Res==0)&&(l_s32Len>0))
     {
-        printf("system: %s\n",l_arru8Buf);
+        printf("%s\n",l_arru8Buf);
         system(l_arru8Buf);
     }
 
@@ -257,7 +258,7 @@ void* server_data_handle(void* arg)
         return NULL ;
     }
 
-    //printf("client path: %s \n",l_stPara->stClientAddr.sun_path);   
+    printf("client path: %s \n",l_stPara->stClientAddr.sun_path);   
     if(0==strcmp(l_stPara->stClientAddr.sun_path,HEARBEAT_PAHT))
     {
         server_hearbeat_handle(l_stPara->s32SocketId);
@@ -301,10 +302,10 @@ void* server_accept_pthread(void* arg)
 
     bind(l_s32ServerSockFd, (struct sockaddr *)&l_stServerAddr, l_s32ServerLen);
 
-    /**最大监听50个客户端**/
+    /**最大监听10个客户端**/
     listen(l_s32ServerSockFd, 50);
 
-    //printf("server waiting for unix domain client connect\n");
+    printf("server waiting for unix domain client connect\n");
     l_s32ClientLen = sizeof(l_stClientAddr);
 
     /**接收客户端的链接**/
@@ -332,9 +333,9 @@ void* server_accept_pthread(void* arg)
             printf("create client data handle thread error !!!\n");	
         }
 
-		/**将客该SockFd与对应的客户端建立映射关系**/
-		//printf("unix domain socket patch = %s \n",l_stClientAddr.sun_path);
-		usleep(10000);
+        /**将客该SockFd与对应的客户端建立映射关系**/
+        //printf("unix domain socket patch = %s \n",l_stClientAddr.sun_path);
+         usleep(10000);
     }
 
     if(l_s32ServerSockFd>0)
@@ -363,16 +364,15 @@ int main(void)
     /**创建unix domain socket连接线程**/
     if(0==pthread_create(&l_UnixConnectId,NULL,server_accept_pthread,&l_s32Para))
     {
-        //printf("create unix domin socket lpthread success\n");
+        printf("create unix domin socket lpthread success\n");
     }else
     {
         printf("create unix domin socket lpthread error !!!\n");
     }
 
-#if 0	
-	//暂时不需要监控主程序运行状态，将其关闭
     while(1)
     {
+
         if(0==gs_u8HearbeatFlag)
         {
             l_s32HBLostCnt ++;
@@ -408,8 +408,7 @@ int main(void)
         }
         sleep(1);
     }
-	
-#endif
+
 
     /**阻塞，直到线程退出才能退出**/
     pthread_join(l_UnixConnectId,NULL);

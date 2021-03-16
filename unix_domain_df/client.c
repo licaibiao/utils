@@ -12,8 +12,8 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <pthread.h>
- 
-#define SERVER_PATH    "./tmp/server"    
+
+#define SERVER_PATH    "./tmp/server"     
 #define HEARBEAT_PAHT  "./tmp/hearbeat"  
 #define SYSTEM_PAHT    "./tmp/system_cmd"   
 
@@ -88,7 +88,7 @@ int client_connect_to_server(int *s32SocketId,unsigned char * pu8Path)
     }
 
     *s32SocketId = l_s32SockFd;
-    //printf("unix domain addr:%d connet success \n",*s32SocketId);
+    printf("unix domain addr:%d connet success \n",*s32SocketId);
     return 0;
 }
 
@@ -155,14 +155,12 @@ int client_system(void)
     {
         l_s32Ret = client_connect_to_server(&s32SocketId,SYSTEM_PAHT);
         if((l_s32Ret==0)&&(s32SocketId>0))
-		{
-			client_send_data(s32SocketId,pData,strlen(pData));	
-		}
-
+        client_send_data(s32SocketId,pData,strlen(pData));
         client_exit(&s32SocketId);
         usleep(100000);
     }
 }
+
 
 void *client_hearbeat(void* arg)
 {
@@ -192,6 +190,7 @@ void *client_hearbeat(void* arg)
     }
 
     client_exit(&s32SocketId);
+
 }
 
 
@@ -199,7 +198,6 @@ int main(void)
 {
     pthread_t l_UnixConnectId;
  
-#if 0 
     /**创建unix domain socket连接线程**/
     if(0==pthread_create(&l_UnixConnectId,NULL,client_hearbeat,NULL))
     {
@@ -208,7 +206,6 @@ int main(void)
     {
         printf("create unix domin socket lpthread error !!!\n");
     }
-#endif
 
     client_system();
     
